@@ -7,8 +7,8 @@ const sendBtn = document.getElementById('message-send-btn');
 // let genderMessageSent = false; 
 
 const data1 = {
-    user_id: "user23",
-    message: "hello",
+    user_id: "user123",
+    message: "",
 };
 
 const data = {
@@ -19,8 +19,8 @@ const data = {
 // https://patienttriage.azurewebsites.net/chat
 // https://web-search-backend.vercel.app/create
 
-sendBtn.addEventListener('click', () => {
-    axios.post('https://patienttriage.azurewebsites.net/chat', data1)
+sendBtn.addEventListener('click', async () => {
+   await axios.post('https://patienttriage.azurewebsites.net/chat', data1)
         .then((res) => {
             console.log(JSON.stringify(res.data));
         })
